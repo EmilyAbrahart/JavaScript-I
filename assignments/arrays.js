@@ -75,7 +75,10 @@ console.log(`The last car in the inventory is the ${lastCar.car_make} ${lastCar.
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 let carModels = [];
-carModels = inventory.sort((a,b) => {(a.car_model.toLowerCase() > b.car_model.toLowerCase()) ? 1 : -1});
+inventory.forEach((element) => carModels.push(element));
+carModels.sort((a,b) => {
+    return (a.car_model.toLowerCase() < b.car_model.toLowerCase()) ? -1 : 
+    (a.car_model.toLowerCase() > b.car_model.toLowerCase()) ? 1 : 0});
 console.log(carModels);
 
 // ==== Challenge 4 ====
